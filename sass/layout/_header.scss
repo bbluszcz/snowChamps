@@ -1,0 +1,50 @@
+.header {
+    position: relative;
+    height: 95vh;
+    background-image: linear-gradient(to right, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url("../img_1/cover_large.jpg");
+    background-position: top;
+    background-size: cover;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+        @media (min-resolution: 192dpi) and (min-width: 37.5em),
+        (min-width: 125em) {
+            background-image: linear-gradient(to right, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)), url("../img/hero.jpg");
+        }
+
+          @include media(phone) {
+    height: 88vh;
+          }
+
+      @include media(phone) {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 78vh, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 78vh, 0 100%);
+}
+    &__logo-box {
+        position: absolute;
+        top: 2rem;
+        left: 3rem;
+    }
+    &__logo {
+        height: 15rem;
+        backface-visibility: hidden;
+    @include media(tab-port) {
+        height: 12rem;
+    }
+    @include media(phone) {
+        height: 10rem;
+    }
+        }
+
+    &__text-box {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        @include media(tab-port) {
+                padding-top: 100px;
+        }
+
+    }
+}

@@ -1,0 +1,39 @@
+.composition {
+  position: relative;
+  &__photo {
+    width: 55%;
+    border-radius: 2px;
+       box-shadow: $shadow1;
+
+    position: absolute;
+    z-index: 10;
+    transition: all 0.2s;
+    &--p1 {
+      left: 0;
+      top: -2rem;
+    }
+    &--p2 {
+      right: 0;
+      top: 2rem;
+    }
+    &--p3 {
+      left: 20%;
+      top: 10rem;
+    }
+
+    &:hover {
+      outline: 0.6rem solid $color-primary;
+      outline-offset: 1rem;
+      transform: scale(1.05);
+       box-shadow: $shadow1;
+      z-index: 20;
+    }
+  }
+  &:hover &__photo:not(:hover) {
+    transform: scale(0.9);
+  }
+
+     @include media(tab-port) {
+    padding-bottom: 30rem;
+     }
+}
